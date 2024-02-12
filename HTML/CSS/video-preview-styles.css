@@ -1,0 +1,102 @@
+.preview-grid 
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   /*These control the space between each collum and each row of each container inside it*/
+   column-gap: 16px;
+   row-gap: 40px;
+}
+
+@media (min-width: 898px) and (max-width: 1164px)
+{
+   .preview-grid
+   {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+}
+@media (min-width: 641px) and (max-width: 899px) {
+   .preview-grid {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+@media (min-width: 0px) and (max-width: 640px) {
+   .preview-grid {
+      grid-template-columns: 1fr;
+   }
+}
+
+.thumbnail-container 
+{
+   /*in order to have a timestamp with absolute positioning, the container that contains it and the thumbnail must be set to a relative position, which doesn't change anything for the container itself, but it allows the timestamp to be placed with an absolute position based on the container */
+   position: relative;
+
+}
+
+.time-stamp {
+   position: absolute;
+   right: 4px;
+   bottom: 7px;
+   color: white;
+   background-color: black;
+   font-family: roboto, arial;
+   font-size: 12px;
+   font-weight: 500;
+   padding: 2px 4px;
+   border-radius: 2px;
+ 
+}
+
+.thumbnail,
+.preview-info :not(.viewcount-date) 
+{
+   cursor: pointer;
+}
+
+/*Important, the picture needs to be within a container, and then THE PICTURE ITSELSEF NEEDS TO HAVE
+IT'S WIDTH SET TO 100%, because pictures have a property where they maintain their original size by default; the size of each thumbnail depends on the number of items in the grid */
+.thumbnail 
+{
+   width: 100%;
+   border-radius: 10px;
+}
+
+.preview-info-grid 
+{
+   display: grid;
+   grid-template-columns: 50px 1fr;
+   /*50x for the channel pic, rest goes to description; the exact amount of space it takes is defined by its preview container, the latter's size is determined by the number of other preview containers in the grid*/
+   margin-top: 10px;
+
+}
+
+.channel-profile-picture 
+{
+   width: 40px;
+   border-radius: 20px;
+   vertical-align: top;
+}
+
+.video-title 
+{
+   font-family: 'Roboto', Arial;
+   font-size: 16px;
+   font-weight: 500;
+   /*medium font for Roboto*/
+   color: rgb(15, 15, 15);
+   margin-bottom: 15px;
+
+}
+
+.channel-name {
+   font-family: 'Roboto', Arial;
+   font-size: 14px;
+   font-weight: 400;
+   color: rgb(96, 96, 96);
+   /*Got it from inspect->computed*/
+   margin-bottom: 4px;
+}
+
+.viewcount-date {
+   color: rgb(96, 96, 96);
+   font-size: 14px;
+}

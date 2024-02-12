@@ -1,0 +1,21 @@
+body 
+{
+   /*the body element has a default margin of 8px; we set this to zero in order to get more control of our page */
+   /* height: 3000px; */
+   margin: 0;
+   /*We add this extra padding to the body so that the fixed header has extra room and doesn't block anything. It also adds the proper spacing between the header and the video previews. */
+   padding-top: 80px; 
+   padding-left: 100px; /*moves the previews out of the way of the sidebar and gives it the appropriate space for esthetics*/
+   padding-right: 25px;
+   margin-bottom: 150px; /*Just adds space at the end of the previews so it feels less cluttered*/
+   background-color: rgba(211, 211, 211, 0.133); /*background color seen in preview area, that is really encompassing the entire page*/
+   
+}
+p {
+   
+   font-family: 'Roboto', Arial;
+   /*The following allow us to have precise control on text spacing:*/
+   margin-top: 0;
+   margin-bottom: 0;
+
+}

@@ -1,0 +1,54 @@
+/*Note: Given that the sidebar has a fixed position, this means that its not actually in the body of the file, but rather it's fixed at the specified position in the user's window; this is why we use the padding property in the body element to move the previews away from the sidebar*/
+
+.sidebar-flex-container
+{
+   display: flex;
+   flex-direction: column;
+   width: 72px; /*this also keeps the sidebar from resizing*/
+   position: fixed;
+   top:55px; /*makes it start right after the header ends*/
+   bottom: 0;
+   left: 0;
+   background-color: white;
+   z-index: 101; /*makes it sit above the header so that the latters border at the bottom is not shown over the sidebar*/
+   
+}
+
+.sidebar-button
+{
+   display: flex;
+   height: 74px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   /*removing button default values:*/
+   background-color: white;
+   border-style: none;
+   margin: 0;
+   padding: 0;
+   border-radius: 0;
+}
+
+.sidebar-button:hover
+{
+   background-color: rgba(128, 128, 128, 0.083);
+   cursor:pointer;
+}
+
+.home-icon,.explore-icon,.subscriptions-icon,.originals-icon,.music-icon,.library-icon
+{
+   height: 24px;
+   margin-bottom: 5px;
+}
+.sidebar-icon
+{
+   height: 24px;
+   margin-bottom: 5px;
+}
+
+.sidebar-item-text
+{
+   font-family: 'Roboto', Arial;
+   font-size: 10px;
+   font-weight: 400;
+}

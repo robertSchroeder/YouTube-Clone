@@ -1,0 +1,238 @@
+.flex-header-container
+{  
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   height:55px;
+   border-width: 1px;
+   border-color: (255, 255, 255);
+   border-bottom: 1px solid #dedede;
+   background-color: white;
+   margin-bottom: 20px;
+   /*The following are to keep the header on the screen as we scroll:*/
+   position:fixed;
+   /*We want the header to always be at the very top, and covering the width of the SCREEN at the height we specified:*/
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 100; /*this keeps the items we added after the header from displaying above it*/
+}
+
+.left-section
+{  /*we don't give it a flex value within the header container because we want the size to remain constant when the window size changes; the height and width of the items within, as the div will completely evenlop them and stretch to accomodate them */
+   display: flex;
+   /* background-color: rgba(255, 0, 225, 0.419); */
+   align-items: center;
+
+}
+/*We get rid of default values that come with the buttons and setting the cursor to pointer*/
+.hamburguer-menu-button , .youtube-home-button, .search-icon-button, .voice-search-button, .create-button, .apps-button, .user-profile-button,.notifications-button
+{
+   background-color: white; 
+   border-style: none; 
+   margin: 0;
+   padding: 0;
+   cursor: pointer;
+}
+.hamburguer-menu-button
+{  display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 40px;
+   width: 40px;
+   border-radius: 40px;
+   margin-right: 20px;
+   margin-left: 15px;
+   
+}
+.hamburguer-menu-button:hover
+{
+   background-color: rgba(128, 128, 128, 0.176);
+}
+
+.hamburguer-menu-icon
+{
+   height: 23px;
+   
+}
+
+.youtube-home-icon
+{
+   height: 20px;
+   
+}
+
+.middle-section
+{  
+   display: flex;
+   /* background-color: rgba(0, 174, 255, 0.426); */
+   flex: 1;
+   max-width: 600px; /*makes sure this section doesn't exceed a given width*/
+   align-items: center;
+   /*The margins make it so that the items don't collide when the window is resized.*/
+   margin-left: 50px;
+   margin-right: 35px;
+}
+
+.search-box
+{  
+   flex: 1; /*so it can take most of the space in the middle section*/
+   height: 40px;
+   font-size: 16px; /*font size WHEN TYPING*/
+   padding-left: 15px;
+   border-color: rgb(204, 204, 204);
+   border-width: 1px;
+   border-style: solid;
+   /*We only apply rounding to the top and bottom left corners so that the searchbox and search buttons merge better*/
+   border-top-left-radius: 2px;
+   border-bottom-left-radius: 2px;
+   box-shadow: rgb(238, 238, 238) 0px 1px 2px 0px inset;
+   /*The following removes the default width that search boxes have so that it can shrink as much as possible :*/
+   width: 0;
+   z-index: 1; /*Important, otherwise the search button lays on top and it looks strange*/
+   
+}
+
+/*The following removes a dated "x" input that appears when you type on the search box in some browsers such as Chrome:*/
+.search-box::-webkit-search-cancel-button
+{
+   -webkit-appearance: none;
+}
+
+/*The following adds a blue outline within the box whe the user clicks on the search box*/
+.search-box:focus
+{  
+   box-shadow: 0 0 0 0.5px rgba(5, 146, 216, 0.744) inset;
+   outline: none; /*This part is important, otherwise the border of the searchbox appears larger than it actually is*/
+   
+}
+
+.search-box::placeholder
+{
+   font-family: 'Roboto', Arial;
+   font-size: 16px;
+   color: #888888;;
+
+}
+
+.search-icon-button
+{  
+   /*These are for the box around the icon, needed for the icon to display properly in addition to esthetics*/
+   height: 40px;
+   width: 65px;
+   background-color: rgb(239, 239, 239);
+   border-width: 1px;
+   border-style: solid;
+   border-color:rgb(204, 204, 204);
+   /*We only apply rounding to the top and bottom right corners so that the searchbox and search buttons merge better*/
+   border-top-right-radius: 2px;
+   border-bottom-right-radius: 2px;
+   margin-left: -1px; /*PULLS the search button closer to searchbar*/
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-left: none;
+   
+}
+
+.search-icon-button:hover
+{
+   background-color: rgba(193, 193, 193, 0.359);
+}
+
+.search-icon
+{
+   height: 24px ;
+   
+}
+
+.voice-search-button
+{  
+   height: 40px;
+   width: 40px;
+   margin-left: 8px;
+   border-radius: 40px;
+   background-color: rgb(239, 239, 239);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+ .voice-search-button:hover
+ {
+   background-color: rgba(189, 189, 189, 0.633);
+ }
+
+.voice-search-icon
+{
+   height: 24px;
+
+}
+
+.right-section 
+{
+   display: flex;
+   align-items: center;
+   width: 180px; /*Determines how much space each item has between each other*/
+   justify-content: space-between;
+   margin-right: 20px;
+   /*The following property keeps the items within this flex box from shrinking and getting close to each other; the other boxes have items that don't shrink, even though they don't have this property, because they haave specified margin values that keep them in place, which essentially accomplished the same thing.  */
+   flex-shrink: 0;
+}
+
+.create-button,.apps-button,.notifications-button
+{  display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 40px;
+   width: 40px;
+   border-radius: 40px;
+}
+
+.create-button:hover,.apps-button:hover,.notifications-button:hover
+{
+   background-color: rgba(128, 128, 128, 0.176);
+}
+
+.create-icon,.apps-icon,.notifications-icon
+{   
+   height: 24px;
+   
+}
+
+.notifications-button
+{  
+   position: relative; /*used for the notification count, which uses absolute positioning*/
+}
+.notification-count
+{  
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   right:5px;
+   top:7px;
+   color: white;
+   background-color: rgb(214, 3, 3);
+   font-family: roboto,arial;
+   font-size: 10px;
+   height:15px;
+   width: 15px;
+   border-radius: 20px;
+
+}
+
+.user-profile-button
+{
+   height: 40px;
+   border-radius:16px;
+   margin-left: 5px;
+}
+
+.user-profile-picture
+{
+   height: 40px;
+   border-radius: 16px;
+}
